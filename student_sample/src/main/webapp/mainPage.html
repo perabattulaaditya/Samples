@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+    <style type="text/css">
+        *:not(i)
+        {
+            font-family:Segoe UI,SegoeUI,Segoe WP,sans-serif,Tahoma,Arial;
+            font-weight: inherit;
+        }
+        #myCarousel, .carousel-inner
+        {
+            height: 50vh;
+        }
+    </style>
+
+    <body>
+        <div class="container-fluid" style="background-color: #303030; color: white;">
+            <h1>Student Management System</h1>
+            <p>Single place for all student needs</p>
+        </div>
+
+        <div class="container-fluid">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item">
+                        <img src="2.jpg" alt="Chicago" style="width:100%; height: -webkit-fill-available">
+                        <div class="carousel-caption">
+                            <h3>Classes</h3>
+                            <p>Students engaging in interactive classes</p>
+                        </div>
+                    </div>
+                    <div class="item active">
+                        <img src="1.jpg" alt="Los Angeles" style="width:100%; height: -webkit-fill-available">
+                        <div class="carousel-caption">
+                            <h3>Library</h3>
+                            <p>All the books you will ever need</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="3.jpg" alt="New York" style="width:100%; height: -webkit-fill-available">
+                        <div class="carousel-caption">
+                            <h3>Sports</h3>
+                            <p>Students participating in active physical activities</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+		<form action = 'Student'>
+            <table class="table table-bordered">
+                <thead>
+                  <tr class="success">
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Phone No.</th>
+                    <th>Address</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+					 <td><input type="text" name = 'studentId' ></td>
+                     <td><input type="text" name = 'studentName'></td>
+                     <td><input type="text" name ='phoneNumber'></td>
+                     <td><input type="text" name = 'address'></td>
+                  </tr>               
+                </tbody>
+          </table>
+		  <br>
+		  <button type = "submit" class ='btn' >Add</button>
+		  <button type="button" class="btn">View</button>
+			</form>
+        </div>
+    </body>
+</html>
