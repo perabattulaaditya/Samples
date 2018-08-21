@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src = "	https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" >
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+		
+		<!-- IE Support-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/3.2.2/es6-promise.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
+		<script src="recipescrip.js"></script>
+</head> 	
+<style>
+	div {
+		
+	}
+
+</style>
+<body  ng-app = 'myApp' ng-controller = 'myCtrl'>
+	<div>
+	<h1 class="col-sm-12, text-center" >Recipe Manger</h1>
+	</div>
+	<div class ="col-sm-4">
+		<div class ="col-sm-12" style="margin-top:200px; margin-bottom:20px;padding-left:100px;">
+			<select   ng-model ='selectedRecipe' id ="selectedNewRecipe">
+	        	<option ng-repeat='x in names' value={{x}}>{{x}}</option>
+	        </select>
+		</div>
+		<div class ="col-sm-12" style="margin-top:20px; margin-bottom:20px;padding-left:100px;">
+			<button ng-click="addNewRecipeListId()">
+	        	Add Recipe
+	        </button>
+		</div>
+	</div>
+	<div id ="titlerecipe" class="col-sm-8" style="margin-top:200px; margin-bottom:20px;padding-left:80px;display: block;">
+		<h1>Welcome to Recipe Manger</h1>
+	</div>
+	
+	<div class="col-sm-8" id = "addRecipeListId" 
+	style="margin-top:200px; margin-bottom:20px;padding-left:80px;display: none;">
+		<h2>Add Recipe</h2>
+		<form  >
+		  Recipe Name:&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="recipename" ng-model = "recipename">
+		  <br><br>
+		  First  Ingredient:&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="item1" ng-model = "item1">
+		  <br><br>
+		  Second Ingredient: <input type="text" name="item2" ng-model = "item2">
+		  <br><br>
+		  Third  Ingredient:&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="item3" ng-model = "item3">
+		  <br><br>
+		  Fourth Ingredient:&nbsp;&nbsp; <input type="text" name="item4" ng-model = "item4">
+		  <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  <input type="submit" value="Submit" ng-click ="recipeSubmit()">
+		  &nbsp;
+		  <input type="reset" value="Cancel">
+		</form> 
+	</div>
+
+	<div class="col-sm-8" id = "recipeListId" style="margin-top:200px; margin-bottom:20px;padding-left:80px;display: none;"
+	 ng-repeat = "x in recipeList ">
+		<h2>{{selectedRecipe}}-Ingredient List</h2>
+		<p>Ingredient 1 :{{x.firstRecipe}}</p>
+		<p>Ingredient 2 :{{x.secondRecipe}}</p>
+		<p>Ingredient 3 :{{x.thirdRecipe}}</p>
+		<p>Ingredient 4 :{{x.fourRecipe}}</p>
+	</div>
+
+
+ </body>
+</html>			
